@@ -31,6 +31,7 @@ if __name__ == '__main__':
     # https://www.sfzy888.com/search/label/免费节点
     url = 'https://www.sfzy888.com/search/label/%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9'
     urls = get_new_article(url)
+    print(urls)
     ids = get_gdid(urls[1])
     if ids:
         gdd.download_file_from_google_drive(file_id=ids[0],
