@@ -30,7 +30,7 @@ def get_ggid(url):
 if __name__ == '__main__':
     url = "https://www.mattkaydiary.com/search/label/vpn"
     urls = get_urls(url)
-    ids = get_ggid(urls[0])
+    ids = get_ggid(urls[1])
     if len(ids) == 2:
         gdd.download_file_from_google_drive(file_id=ids[1],
                                             dest_path='./mattkaydiary/{}.yaml'.format(datetime.datetime.now(timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M')),
