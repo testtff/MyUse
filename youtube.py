@@ -33,14 +33,28 @@ def getIDs(url,headers):
     return ids
 
 #获取视频播放页的详情
-def getContent(url, headers):
-    r = requests.get(url, headers=headers, timeout=None, verify=False)
-    r.encoding = 'utf-8'
-    # print(r.text)
-    file_ids = re.findall(r"https://drive\.google\.com/file/d/([\w-]*)",r.text)
-    print(file_ids)
-    return file_ids
+def getSfzy(url, headers):
+    web = 'https://www.sfzy888.com/2021/08/2185clash-clash.html'
+    response = requests.get(url, headers=headers, timeout=None, verify=False)
+    response.encoding = 'utf-8'
+    #print(response.text)
+    #file_ids = re.findall(r"https://www.sfzy888.com/(.*)",response.text)
+    file_ids = re.findall(r"去这里获取免费节点：https://www.sfzy888.com/(.*),?",response.text)
+    #html = etree.HTML(response.text)
+    #file_ids = html.xpath('//div[@id="description-inner"][1][2]//a/@href')
+    print("getSfzy:")
+    # for i in file_ids:
+    #   print(i)
+    return web
     # print(file_ids[0])
+
+def get_ggid(url):
+    resp = requests.get(url, headers=headers)
+    ids = re.findall(r'<a href="https://drive.google.com/(.*)" target="_blank">', resp.text)
+    print("get_ggid():")
+    node_url = ids[0].split('=')[2].split('"')[0]
+    print(node_url)
+    return node_url
 
 if __name__ == '__main__':
     url = 'https://www.youtube.com/channel/UCOQ5AdvDNOfyEAJY5SDXVZg/videos'
@@ -48,13 +62,13 @@ if __name__ == '__main__':
     ids = getIDs(url, headers)
     #获取最新一期的播放地址
     video_url = "https://www.youtube.com"+ids[0]
-    print(video_url)
-    googleDrive_ids = getContent(video_url, headers)
+    nodeUrl = getSfzy(video_url, headers)
+    googleDrive_ids = get_ggid(nodeUrl)
     if googleDrive_ids:
-        gdd.download_file_from_google_drive(file_id=googleDrive_ids[0],
+        gdd.download_file_from_google_drive(file_id=googleDrive_ids,
                                             dest_path='./YT/{}.yaml'.format(datetime.datetime.now(timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M')),
                                             showsize=True, overwrite=True)
-        gdd.download_file_from_google_drive(file_id=googleDrive_ids[0],
+        gdd.download_file_from_google_drive(file_id=googleDrive_ids,
                                             dest_path='./newYaml/newestYT.yaml',showsize=True, overwrite=True)
         # requests.get("https://api.day.app/3TKmw24emfnWtLN6xyDaW9/YouTube节点爬取成功{}".format(datetime.datetime.now(timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M')))
     else:
