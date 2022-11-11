@@ -34,7 +34,7 @@ def getIDs(url,headers):
 
 #获取视频播放页的详情
 def getSfzy(url, headers):
-    web = 'https://www.sfzy888.com/2021/08/2185clash-clash.html'
+    web = 'https://www.sfzy888.com/2022/08/blog-post_30.html'
     response = requests.get(url, headers=headers, timeout=None, verify=False)
     response.encoding = 'utf-8'
     #print(response.text)
