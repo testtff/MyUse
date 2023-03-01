@@ -20,9 +20,9 @@ def delete_file(flod):
     try:
         for item in yamls:
             abs_path = os.path.join(path, item)#组合绝对路径
-            print(f"mtime:{os.path.getmtime(abs_path)}")
-            #比较修改时间是否在3天前
-            if os.path.getmtime(abs_path) <= re_date_unix:
+            print(f"ctime:{os.path.getmtime(abs_path)}")
+            #比较文件创建时间是否在3天前
+            if os.path.getctime(abs_path) <= re_date_unix:
                 print("文件 {} 超过3天，需删除！".format(abs_path))
                 os.remove(abs_path)
 
