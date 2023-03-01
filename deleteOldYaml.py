@@ -1,7 +1,7 @@
 import os, time, datetime,requests
 
 
-"""删除30天前的yaml文件"""
+"""删除3天前的yaml文件"""
 
 
 def delete_file(flod):
@@ -9,19 +9,22 @@ def delete_file(flod):
     yamls = os.listdir(path)#获取文件列表
     # 获取当前时间
     today = datetime.datetime.now()
-    # 计算偏移量,前30天
-    offset = datetime.timedelta(days=-30)
-    # 获取想要的日期的时间,即前30天时间
+    print("today:"+today)
+    # 计算偏移量,前3天
+    offset = datetime.timedelta(days=-3)
+    # 获取想要的日期的时间,即前3天时间
     re_date = (today + offset)
     # 前3天时间转换为时间戳
     re_date_unix = time.mktime(re_date.timetuple())
-    print(yamls)
+    print("re_date_unix:"+re_date_unix)
+    #print(yamls)
     try:
         for item in yamls:
             abs_path = os.path.join(path, item)#组合绝对路径
-            #比较修改时间是否在30天前
+            print(abs_path)
+            #比较修改时间是否在3天前
             if os.path.getmtime(abs_path) <= re_date_unix:
-                print("文件 {} 超过30天，需删除！".format(abs_path))
+                print("文件 {} 超过3天，需删除！".format(abs_path))
                 os.remove(abs_path)
 
     except Exception as e:
