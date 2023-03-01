@@ -15,7 +15,7 @@ def delete_file(flod):
     re_date = (today + offset)
     # 前3天时间转换为时间戳
     re_date_unix = time.mktime(re_date.timetuple())
-    print("re_date_unix:")
+    print(f"re_date_unix:{re_date_unix}")
     #print(yamls)
     try:
         for item in yamls:
