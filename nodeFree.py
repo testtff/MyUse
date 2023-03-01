@@ -23,19 +23,19 @@ def get_ggid(url):
     latest_nodeUrl = html.xpath('//div[@class = "entry-content"]//div[@class = "section"]/p[2]/text()')
     return latest_nodeUrl[0]
 
-#def downLoadNode(url):
-    #print(url)
-    #f = requests.get(url)
-    #with open("node.yaml", "wb") as code:
-    #    code.write(f.content)
+def downLoadNode(url):
+    print(url)
+    f = requests.get(url)
+    with open("./newYaml/node.yaml", "wb") as code:
+        code.write(f.content)
 
 if __name__ == '__main__':
     url = "https://nodefree.org/f/freenode"
     node_Urls = get_new_urls(url)
     googleDrive_ids = get_ggid(node_Urls)
-    #downLoadNode(latest_nodeUrl)
-    if googleDrive_ids:
-      gdd.download_file_from_google_drive(file_id=googleDrive_ids,
-                                 dest_path='./newYaml/nodefree.yaml',showsize=True, overwrite=True)
-    else:
-      print("YouTube节点爬取失败")
+    downLoadNode(latest_nodeUrl)
+    #if googleDrive_ids:
+    #  gdd.download_file_from_google_drive(file_id=googleDrive_ids,
+    #                             dest_path='./newYaml/nodefree.yaml',showsize=True, overwrite=True)
+    #else:
+    #  print("YouTube节点爬取失败")
