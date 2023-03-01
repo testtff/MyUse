@@ -9,7 +9,6 @@ def delete_file(flod):
     yamls = os.listdir(path)#获取文件列表
     # 获取当前时间
     today = datetime.datetime.now()
-    print("today:"+today)
     # 计算偏移量,前3天
     offset = datetime.timedelta(days=-3)
     # 获取想要的日期的时间,即前3天时间
