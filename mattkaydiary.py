@@ -4,6 +4,7 @@ import requests
 import re
 from google_drive_downloader import GoogleDriveDownloader as gdd
 from lxml import etree
+import os
 
 headers = {
     'referer': 'https://www.mattkaydiary.com/',
@@ -31,6 +32,7 @@ if __name__ == '__main__':
     url = "https://www.mattkaydiary.com/search/label/vpn"
     urls = get_urls(url)
     ids = get_ggid(urls[1])
+    os.remove("./newYaml/mattkaydiary1.yaml")
     if len(ids) == 2:
         gdd.download_file_from_google_drive(file_id=ids[1],
                                             dest_path='./mattkaydiary/{}.yaml'.format(datetime.datetime.now(timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M')),
