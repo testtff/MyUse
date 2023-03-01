@@ -26,7 +26,7 @@ def get_ggid(url):
 def downLoadNode(url):
     print(url)
     f = requests.get(url)
-    with open("./newYaml/node.yaml", "wb") as code:
+    with open("./newYaml/nodefree.yaml", "wb") as code:
         code.write(f.content)
 
 if __name__ == '__main__':
