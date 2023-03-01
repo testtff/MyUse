@@ -31,7 +31,7 @@ jobs:
       run: |
         #python sfzySite.py
         #python youtube.py
-        python nodefree.py
+        python nodeFree.py
         python mattkaydiary.py
         #python pojp.py
         python deleteOldYaml.py
