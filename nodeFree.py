@@ -26,7 +26,7 @@ def get_ggid(url):
 
 def downLoadNode(url):
     print(url)
-    if (isfile("./newYaml/nodefree.yaml")):
+    if (os.path.isfile("./newYaml/nodefree.yaml")):
         os.remove("./newYaml/nodefree.yaml")
     f = requests.get(url)
     with open("./newYaml/nodefree.yaml", "wb") as code:
