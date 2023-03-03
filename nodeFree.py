@@ -4,6 +4,7 @@ import requests
 from google_drive_downloader import GoogleDriveDownloader as gdd
 from lxml import etree
 import os
+import time
 
 headers = {
     'referer': 'https://nodefree.org/',
@@ -26,15 +27,16 @@ def get_ggid(url):
 
 def downLoadNode(url):
     print(url)
-    if (os.path.isfile("./newYaml/nodefree.yaml")):
-        print("nodefree.yaml exist,remove it begin")
-        os.remove("./newYaml/nodefree.yaml")
-        print("nodefree.yaml exist,remove it end")
     f = requests.get(url)
     with open("./newYaml/nodefree.yaml", "wb") as code:
         code.write(f.content)
 
 if __name__ == '__main__':
+    if (os.path.isfile("./newYaml/nodefree.yaml")):
+        print("nodefree.yaml exist,remove it begin")
+        os.remove("./newYaml/nodefree.yaml")
+        time.sleep(5)
+        print("nodefree.yaml exist,remove it end")
     url = "https://nodefree.org/f/freenode"
     node_Urls = get_new_urls(url)
     latest_nodeUrl = get_ggid(node_Urls)
