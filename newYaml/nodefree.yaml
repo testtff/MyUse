@@ -46,192 +46,169 @@ tun:
     - 1.1.1.1
     - 1.0.0.1
 proxies:
-  - name: 🇨🇳_CN_中国->🇺🇸_US_美国
-    port: 39041
-    server: 183.238.202.173
-    type: vmess
-    network: tcp
-    udp: true
-    cipher: auto
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 64
-  - name: 🇬🇧_GB_英国
-    port: 443
-    server: 212.102.53.198
-    type: ss
-    udp: true
-    password: shadowsocks
-    cipher: aes-128-gcm
-  - name: 🇷🇺_RU_俄罗斯
-    port: 2098
-    server: f41.maryam1500.top
-    type: vmess
-    network: http
-    udp: true
-    sni: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-    skip-cert-verify: false
-    http-opts: {}
-    cipher: auto
-    uuid: 83876222-64a4-4912-aa18-b7d9d34959de
-    alterId: 0
   - name: 🇺🇸_US_美国_1
-    port: 443
-    server: 216.128.147.13
-    type: trojan
-    udp: true
-    sni: z-v2-003274.kailib.com
-    password: wkmY1R4EcP
-  - name: 🇺🇸_US_美国_2
-    port: 8119
-    server: 38.75.137.105
-    type: ss
-    udp: true
-    password: cdBIDV42DCwnfIN
-    cipher: aes-256-gcm
-  - name: 🇺🇸_US_美国_3
-    port: 6379
-    server: 38.75.137.105
-    type: ss
-    udp: true
-    password: zDNVedRFPQexG9v
-    cipher: aes-256-gcm
-  - name: 🇺🇸_US_美国_4
-    port: 2082
-    server: 172.64.166.2
-    type: vmess
-    network: ws
-    udp: true
-    sni: ip18.6929198.xyz
-    ws-opts:
-      path: /github.com/Alvin9999
-      headers:
-        host: ip18.6929198.xyz
-    cipher: auto
-    uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
-    alterId: 0
-  - name: 🇺🇸_US_美国_5
     port: 8882
     server: 38.86.135.141
     type: ss
     udp: true
     password: kDWvXYZoTBcGkC4
     cipher: aes-256-gcm
-  - name: 🇨🇳_CN_中国->🇫🇷_FR_法国
-    port: 46665
-    server: 120.237.79.157
-    type: vmess
-    network: tcp
+  - name: 🇨🇳_CN_中国->🇩🇪_DE_德国
+    port: 20934
+    server: 221.181.185.71
+    type: ss
     udp: true
-    cipher: auto
-    uuid: 3ac820af-becb-45d7-9e7a-e33d02961bb3
-    alterId: 64
-  - name: 🇺🇸_US_美国->🇨🇦_CA_加拿大
-    port: 2082
-    server: russia.com
-    type: vmess
-    network: ws
+    password: bbO8KazkNBUGb7HP
+    cipher: aes-256-cfb
+  - name: 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
+    port: 25579
+    server: 13.74.71.116
+    type: ss
     udp: true
-    sni: ip18.6929198.xyz
-    ws-opts:
-      path: /github.com/Alvin9999
-      headers:
-        host: ip18.6929198.xyz
-    cipher: auto
-    uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
-    alterId: 0
+    password: 1EDLaUEHX0a0Uvyjzmwjh3
+    cipher: chacha20-ietf-poly1305
+  - name: 🇺🇸_US_美国_2
+    port: 9102
+    server: 169.197.141.84
+    type: ss
+    udp: true
+    password: e4FCWrgpkji3QY
+    cipher: aes-256-gcm
+  - name: 🇺🇸_US_美国_3
+    port: 6679
+    server: 169.197.142.216
+    type: ss
+    udp: true
+    password: TEzjfAYq2IjtuoS
+    cipher: aes-256-gcm
+  - name: 🇩🇪_DE_德国->🇨🇳_CN_中国_1
+    port: 8080
+    server: 45.87.175.199
+    type: ss
+    udp: true
+    password: 1RWwXhwfAB5gAEozU4G2Pg
+    cipher: chacha20-ietf-poly1305
+  - name: 🇺🇸_US_美国_4
+    port: 8091
+    server: 169.197.141.84
+    type: ss
+    udp: true
+    password: PCnnH6SQSnfoS27
+    cipher: aes-256-gcm
+  - name: 🇪🇸_ES_西班牙
+    port: 36792
+    server: 150.241.95.62
+    type: ss
+    udp: true
+    password: F%&MysMUY8
+    cipher: chacha20-ietf-poly1305
+  - name: 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+    port: 8080
+    server: 45.87.175.192
+    type: ss
+    udp: true
+    password: 1RWwXhwfAB5gAEozU4G2Pg
+    cipher: chacha20-ietf-poly1305
+  - name: 🇺🇦_UA_乌克兰
+    port: 443
+    server: 37.19.198.244
+    type: ss
+    udp: true
+    password: shadowsocks
+    cipher: aes-128-gcm
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -254,16 +231,16 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇬🇧_GB_英国
-      - 🇷🇺_RU_俄罗斯
       - 🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国->🇩🇪_DE_德国
+      - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
       - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_1
       - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+      - 🇪🇸_ES_西班牙
+      - 🇩🇪_DE_德国->🇨🇳_CN_中国_2
+      - 🇺🇦_UA_乌克兰
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
